@@ -50,14 +50,3 @@ type Menu struct {
 	PictureName     string
 	ItemDescription string
 }
-
-type EditMenu struct {
-	ItemName        string  `json:"ItemName"`
-	ItemPriceSmall  float64 `json:"ItemPriceSmall"`
-	ItemPriceMedium float64 `json:"ItemPriceMedium"`
-	ItemPriceLarge  float64 `json:"ItemPriceLarge"`
-	ItemType        string  `json:"ItemType"`
-	IsRecommended   bool    `json:"IsRecommended"`
-	PictureName     string  `json:"PictureName"`
-	ItemDescription string  `json:"ItemDescription"`
-}
