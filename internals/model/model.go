@@ -19,10 +19,10 @@ import (
 
 type User struct {
 	gorm.Model
-    ID            uint   `gorm:"primaryKey"`
-    Username      string `gorm:"unique;not null"`
-    PasswordHash  string `gorm:"not null"`
-    Salt          string `gorm:"not null"`
+	ID           uint   `gorm:"primaryKey"`
+	Username     string `gorm:"unique;not null"`
+	PasswordHash string `gorm:"not null"`
+	Salt         string `gorm:"not null"`
 }
 
 // Menu model
@@ -40,13 +40,24 @@ type User struct {
 
 type Menu struct {
 	gorm.Model
-    ID              uint    `gorm:"primaryKey"`
-    ItemName        string  `gorm:"not null"`
-    ItemPriceSmall  float64 `gorm:"not null"`
-    ItemPriceMedium float64 `gorm:"not null"`
-    ItemPriceLarge  float64 `gorm:"not null"`
+	// ID              uint    `gorm:"primaryKey"`
+	ItemName        string  `gorm:"not null"`
+	ItemPriceSmall  float64 `gorm:"not null"`
+	ItemPriceMedium float64 `gorm:"not null"`
+	ItemPriceLarge  float64 `gorm:"not null"`
 	ItemType        string  `gorm:"not null"`
-    IsRecommended   bool    `gorm:"not null"`
-    PictureName     string
-    ItemDescription string
+	IsRecommended   bool    `gorm:"not null"`
+	PictureName     string
+	ItemDescription string
+}
+
+type EditMenu struct {
+	ItemName        string  `json:"ItemName"`
+	ItemPriceSmall  float64 `json:"ItemPriceSmall"`
+	ItemPriceMedium float64 `json:"ItemPriceMedium"`
+	ItemPriceLarge  float64 `json:"ItemPriceLarge"`
+	ItemType        string  `json:"ItemType"`
+	IsRecommended   bool    `json:"IsRecommended"`
+	PictureName     string  `json:"PictureName"`
+	ItemDescription string  `json:"ItemDescription"`
 }
